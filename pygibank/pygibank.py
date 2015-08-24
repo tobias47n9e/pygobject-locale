@@ -7,7 +7,7 @@ import os
 from os.path import join, abspath, dirname
 
 
-APP = 'pygibank'
+APP = "pygibank"
 WHERE_AM_I = abspath(dirname(__file__))
 LOCALE_DIR = join(WHERE_AM_I, 'mo')
 
@@ -21,7 +21,6 @@ if sys.platform.startswith('win'):
     # Set LOCALE_DIR for MS Windows
     import ctypes
     LIB_INTL = abspath(join(WHERE_AM_I, "../gnome/libintl-8.dll"))
-    print(LIB_INTL)
     libintl = ctypes.cdll.LoadLibrary(LIB_INTL)
     lc = locale.setlocale(locale.LC_ALL, "")
     print(lc) # Returns local. On W e.g. German_Germany.1252
@@ -42,12 +41,12 @@ class MyApp(object):
     def __init__(self):
         self.builder = Gtk.Builder()
         self.glade_file = join(WHERE_AM_I, 'ui.glade')
-        ret = self.builder.set_translation_domain(APP)
+        ret = self.builder.set_translation_domain("pygibank")
         print(ret) # = None. Not useful.
         self.builder.add_from_file(self.glade_file)
 
         print(_('PyGiBank - The window title'))
-        print(_('Hello User'))
+        print(_('Hellö User'))
         print(_('Press the Button'))
         print(_('On or off?'))
 

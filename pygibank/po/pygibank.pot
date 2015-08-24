@@ -8,27 +8,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-18 12:51+0200\n"
+"POT-Creation-Date: 2015-08-24 13:20+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: pygibank/pygibank.py:53 pygibank/ui.glade:21
-msgid "Hello User"
+#: pygibank/pygibank.py:51 pygibank/ui.glade:23
+msgid "Hellö User"
 msgstr ""
 
-#: pygibank/pygibank.py:55 pygibank/ui.glade:44
+#: pygibank/pygibank.py:53 pygibank/ui.glade:46
 msgid "On or off?"
 msgstr ""
 
-#: pygibank/pygibank.py:54 pygibank/ui.glade:31
+#: pygibank/pygibank.py:52 pygibank/ui.glade:33
 msgid "Press the Button"
 msgstr ""
 
-#: pygibank/pygibank.py:52 pygibank/ui.glade:7
+#: pygibank/pygibank.py:50 pygibank/ui.glade:7
 msgid "PyGiBank - The window title"
 msgstr ""

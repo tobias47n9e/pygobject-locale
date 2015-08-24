@@ -12,30 +12,40 @@ python3 -m nsist installer.cfg
 
 # Translations
 
-## create the pot file from the source code
+## Create the pot file from the source code
 
 ```
 xgettext --from-code=UTF-8 --keyword=translatable --keyword=_ --sort-output pygibank/*.{py,glade} -o pygibank/po/pygibank.pot
 ```
 
-## to start a new localization
+## To start a new localization:
 
 Use this command or use poedit.
 
+For Italian as spoken in Italy for example:
 ```
-msginit --locale=$LANG --input=pygibank.pot
-```
-
-## to compile the po thus build mo
-
-```
-msgfmt -o po/it_IT.UTF-8.mo po/it_IT.UTF-8.po
+msginit --locale=it_IT --input=pygibank.pot
 ```
 
-## place the mo-file into
+## Compile the po files into mo files:
+
+For Italian for example:
+```
+msgfmt -o po/it.mo po/it.po
+```
+
+## Where does the mo-file go?
+
+For Linux the translations can go into the directory defined in the source code:
 
 For example for German:
-
 ```
 pygibank/mo/de/LC_MESSAGES/pygibank.mo
+```
+
+For Windows, the *.mo files currently need to go into the bundled packages:
+
+For example for French:
+```
+gnome/share/locale/fr/LC_MESSAGES/pygibank.mo
 ```
