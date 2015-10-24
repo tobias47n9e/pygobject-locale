@@ -1,3 +1,6 @@
+# encoding: utf-8
+from __future__ import print_function, unicode_literals
+
 from gi.repository import Gtk
 import gettext
 import locale
@@ -53,7 +56,28 @@ class MyApp(object):
         go = self.builder.get_object
         self.window = go('window')
         self.builder.connect_signals(self)
+        self.translate_gui() # This call is only needed for Windows tranlation.
         self.window.show()
+
+    def translate_gui(self):
+        """
+        For Windows, cycle over objects and set label and title again.
+
+        This function only executes on Windows. For each object in
+        the Glade-file, the label and title is retrieved and if it is
+        None it sets the label and title again. The '_()' ensures that
+        the strings are translated.
+        """
+        if sys.platform == "win32":
+            for obj in self.builder.get_objects():
+                if (not isinstance(obj, Gtk.SeparatorMenuItem)) and hasattr(obj, "get_label"):
+                    label = obj.get_label()
+                    if label is not None:
+                        obj.set_label(_(label))
+                elif hasattr(obj, "get_title"):
+                    title = obj.get_title()
+                    if title is not None:
+                        obj.set_title(_(title))
 
     def main_quit(self, widget):
         Gtk.main_quit()
